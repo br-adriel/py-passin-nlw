@@ -2,6 +2,7 @@ from typing import Dict
 
 from sqlalchemy.exc import IntegrityError
 
+from src.models.entities.attendees import Attendees
 from src.models.entities.events import Events
 from src.models.settings.connection import db_connection_handler
 
@@ -37,3 +38,18 @@ class EventsRepository:
                 .one_or_none()
             )
             return event
+
+    def count_event_attendees(self, event_id: str) -> int:
+        with db_connection_handler as database:
+            attendees_count = (
+                database.session
+                .query(Events)
+                .join(Attendees, Attendees.event_id == Events.id)
+                .filter(Events.id == event_id)
+                .with_entities(
+                    Events.maximum_attendees,
+                    Attendees.id
+                )
+                .count()
+            )
+            return attendees_count
