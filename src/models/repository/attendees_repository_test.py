@@ -15,3 +15,10 @@ def test_insert_attendee():
     attendee_repository = AttendeesRepository()
     response = attendee_repository.insert_attendee(attendee)
     print(response)
+
+
+def test_get_attendee_badge_by_id():
+    attendee_id = "1"
+    attendees_repository = AttendeesRepository()
+    attendee = attendees_repository.get_attendee_badge_by_id(attendee_id)
+    print(attendee)
