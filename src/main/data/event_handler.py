@@ -24,6 +24,10 @@ class EventHandler:
         if not event:
             raise Exception('Evento não encontrado')
 
+        event_attendees_count = self.__events_repository.count_event_attendees(
+            event_id
+        )
+
         return HttpResponse(
             body={
                 "event": {
@@ -31,7 +35,8 @@ class EventHandler:
                     'title': event.title,
                     'details': event.details,
                     'slug': event.slug,
-                    'maximum_attendees': event.maximum_attendees,
+                    'maximumAttendees': event.maximum_attendees,
+                    'attendeesAmount': event_attendees_count,
                 }
             },
             status_code=200
