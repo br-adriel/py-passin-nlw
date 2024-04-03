@@ -13,4 +13,4 @@ class Events(Base):
     maximum_attendees = Column(Integer)
 
     def __repr__(self):
-        return f"Events [title={self.title}, maximum_attendees={self.maximum_attendees}, ]"
+        return f"Events [title={self.title}, maximum_attendees={self.maximum_attendees}]"
