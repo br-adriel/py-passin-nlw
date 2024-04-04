@@ -4,7 +4,7 @@ from src.models.settings.base import Base
 
 
 class CheckIns(Base):
-    __tablename__ = "ckeck_ins"
+    __tablename__ = "check_ins"
 
     id = Column(Integer, primary_key=True)
     created_at = Column(DateTime, default=func.now())
