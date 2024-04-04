@@ -1,5 +1,6 @@
-from src.main.http_types.http_request import HttpRequest
-from src.main.http_types.http_response import HttpResponse
+
+from src.http_types.http_request import HttpRequest
+from src.http_types.http_response import HttpResponse
 from src.models.repository.check_ins_repository import CheckInsRepository
 
 

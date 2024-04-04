@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, request
 
-from src.main.data.event_handler import EventHandler
-from src.main.http_types.http_request import HttpRequest
+from src.data.event_handler import EventHandler
+from src.http_types.http_request import HttpRequest
 
 event_route_bp = Blueprint("event_route", __name__)
 

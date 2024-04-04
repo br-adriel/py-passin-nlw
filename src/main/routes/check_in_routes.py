@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify
 
-from src.main.data.check_in_handler import CheckInHandler
-from src.main.http_types.http_request import HttpRequest
+from src.data.check_in_handler import CheckInHandler
+from src.http_types.http_request import HttpRequest
 
 check_in_route_bp = Blueprint("check_in_route", __name__)
 
